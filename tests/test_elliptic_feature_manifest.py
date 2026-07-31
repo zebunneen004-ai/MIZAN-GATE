@@ -5,7 +5,6 @@ import yaml
 
 from mizan_gate.features.registry import ManifestValidationError, load_feature_manifest
 
-
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "manifests" / "features" / "elliptic_v1.yaml"
 EXPERIMENT = ROOT / "configs" / "experiments" / "elliptic_redundancy_v0_1.yaml"

@@ -8,7 +8,6 @@ import yaml
 
 from mizan_gate.features.registry import load_feature_manifest
 
-
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_EXPERIMENT = ROOT / "configs" / "experiments" / "elliptic_redundancy_v0_1.yaml"
 
