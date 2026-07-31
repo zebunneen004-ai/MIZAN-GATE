@@ -1,0 +1,241 @@
+schema_version: '1.0'
+manifest_id: elliptic_v1
+dataset: elliptic_bitcoin_transactions
+source_study:
+  repository: zebunneen004-ai/graph-financial-crime-detection
+  release: v2.0.2
+  commit: bf807ef4e3af534d1d0eaa26b1a6cc56c7715b95
+  run_id: run_20260726T095610Z
+forbidden_predictors:
+- txId
+- time_step
+- label
+- label_status
+- total_degree
+- pagerank_raw_snapshot
+- weak_component_size
+families:
+  local_supplied:
+    role: Anonymous transaction-local supplied predictors
+    availability: transaction_record_or_local_context_as_supplied
+    expected_count: 93
+    features:
+    - feature_1
+    - feature_2
+    - feature_3
+    - feature_4
+    - feature_5
+    - feature_6
+    - feature_7
+    - feature_8
+    - feature_9
+    - feature_10
+    - feature_11
+    - feature_12
+    - feature_13
+    - feature_14
+    - feature_15
+    - feature_16
+    - feature_17
+    - feature_18
+    - feature_19
+    - feature_20
+    - feature_21
+    - feature_22
+    - feature_23
+    - feature_24
+    - feature_25
+    - feature_26
+    - feature_27
+    - feature_28
+    - feature_29
+    - feature_30
+    - feature_31
+    - feature_32
+    - feature_33
+    - feature_34
+    - feature_35
+    - feature_36
+    - feature_37
+    - feature_38
+    - feature_39
+    - feature_40
+    - feature_41
+    - feature_42
+    - feature_43
+    - feature_44
+    - feature_45
+    - feature_46
+    - feature_47
+    - feature_48
+    - feature_49
+    - feature_50
+    - feature_51
+    - feature_52
+    - feature_53
+    - feature_54
+    - feature_55
+    - feature_56
+    - feature_57
+    - feature_58
+    - feature_59
+    - feature_60
+    - feature_61
+    - feature_62
+    - feature_63
+    - feature_64
+    - feature_65
+    - feature_66
+    - feature_67
+    - feature_68
+    - feature_69
+    - feature_70
+    - feature_71
+    - feature_72
+    - feature_73
+    - feature_74
+    - feature_75
+    - feature_76
+    - feature_77
+    - feature_78
+    - feature_79
+    - feature_80
+    - feature_81
+    - feature_82
+    - feature_83
+    - feature_84
+    - feature_85
+    - feature_86
+    - feature_87
+    - feature_88
+    - feature_89
+    - feature_90
+    - feature_91
+    - feature_92
+    - feature_93
+  one_hop_aggregated:
+    role: Anonymous one-hop backward/forward aggregate predictors supplied by Elliptic
+    availability: relational_aggregate_as_supplied; exact within-snapshot decision-time availability not established
+    expected_count: 72
+    features:
+    - feature_94
+    - feature_95
+    - feature_96
+    - feature_97
+    - feature_98
+    - feature_99
+    - feature_100
+    - feature_101
+    - feature_102
+    - feature_103
+    - feature_104
+    - feature_105
+    - feature_106
+    - feature_107
+    - feature_108
+    - feature_109
+    - feature_110
+    - feature_111
+    - feature_112
+    - feature_113
+    - feature_114
+    - feature_115
+    - feature_116
+    - feature_117
+    - feature_118
+    - feature_119
+    - feature_120
+    - feature_121
+    - feature_122
+    - feature_123
+    - feature_124
+    - feature_125
+    - feature_126
+    - feature_127
+    - feature_128
+    - feature_129
+    - feature_130
+    - feature_131
+    - feature_132
+    - feature_133
+    - feature_134
+    - feature_135
+    - feature_136
+    - feature_137
+    - feature_138
+    - feature_139
+    - feature_140
+    - feature_141
+    - feature_142
+    - feature_143
+    - feature_144
+    - feature_145
+    - feature_146
+    - feature_147
+    - feature_148
+    - feature_149
+    - feature_150
+    - feature_151
+    - feature_152
+    - feature_153
+    - feature_154
+    - feature_155
+    - feature_156
+    - feature_157
+    - feature_158
+    - feature_159
+    - feature_160
+    - feature_161
+    - feature_162
+    - feature_163
+    - feature_164
+    - feature_165
+  completed_topology:
+    role: Handcrafted topology variables from completed time-step snapshots
+    availability: retrospective_completed_snapshot; not presumed alert-time available
+    expected_count: 5
+    features:
+    - in_degree
+    - out_degree
+    - pagerank_relative
+    - clustering
+    - k_core
+feature_sets:
+  local:
+    families:
+    - local_supplied
+    expected_count: 93
+  aggregate:
+    families:
+    - one_hop_aggregated
+    expected_count: 72
+  full_supplied:
+    families:
+    - local_supplied
+    - one_hop_aggregated
+    expected_count: 165
+  topology_completed:
+    families:
+    - completed_topology
+    expected_count: 5
+  local_plus_topology:
+    families:
+    - local_supplied
+    - completed_topology
+    expected_count: 98
+  aggregate_plus_topology:
+    families:
+    - one_hop_aggregated
+    - completed_topology
+    expected_count: 77
+  full_plus_topology:
+    families:
+    - local_supplied
+    - one_hop_aggregated
+    - completed_topology
+    expected_count: 170
+notes:
+- Feature names are positional because the public Elliptic predictors are anonymized.
+- Unknown-labeled transactions remain eligible for graph construction but not supervised metrics.
+- This manifest registers completed-snapshot topology only; upstream-only features will receive a separate version after their
+  causal definitions are preregistered.

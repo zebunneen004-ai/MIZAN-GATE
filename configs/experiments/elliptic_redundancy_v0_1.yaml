@@ -1,0 +1,121 @@
+experiment_id: elliptic_redundancy_v0_1
+status: design_frozen_before_results_external_timestamp_pending
+feature_manifest: manifests/features/elliptic_v1.yaml
+research_question: Does completed-snapshot topology provide materially greater incremental predictive
+  information when added to 93 local supplied predictors than when added to the full 165 supplied predictors
+  that already contain 72 one-hop relational aggregates?
+primary_model:
+  family: xgboost
+  strategy: fixed_parameters_across_feature_sets
+  parameters:
+    n_estimators: 300
+    max_depth: 8
+    learning_rate: 0.15
+    subsample: 0.85
+    colsample_bytree: 0.85
+    min_child_weight: 10
+    gamma: 0.0
+    reg_alpha: 1.0
+    reg_lambda: 2.0
+  seed_protocol:
+    matched_seeds:
+    - 11
+    - 23
+    - 42
+    - 71
+    - 101
+    primary_aggregation: mean_predicted_probability_across_seeds_before_metric_calculation
+    seed_role: technical_replicates_not_independent_inferential_units
+    per_seed_results: descriptive_stability_analysis_only
+feature_sets:
+  primary_pairs:
+  - - local
+    - local_plus_topology
+  - - full_supplied
+    - full_plus_topology
+  secondary_sets:
+  - aggregate
+  - topology_completed
+  - aggregate_plus_topology
+splits:
+  development:
+    time_steps:
+    - 1
+    - 30
+    expanding_folds:
+    - train:
+      - 1
+      - 10
+      validation:
+      - 11
+      - 15
+    - train:
+      - 1
+      - 15
+      validation:
+      - 16
+      - 20
+    - train:
+      - 1
+      - 20
+      validation:
+      - 21
+      - 25
+    - train:
+      - 1
+      - 25
+      validation:
+      - 26
+      - 30
+  extension_window:
+    time_steps:
+    - 31
+    - 40
+    role: locked_temporal_extension_for_new_feature_contrasts
+  historical_known_holdout:
+    time_steps:
+    - 41
+    - 49
+    role: secondary_extension_evidence_not_newly_untouched
+metrics:
+  primary: pr_auc
+  secondary:
+  - roc_auc
+  - precision_at_fixed_alert_budget
+  - recall_at_fixed_alert_budget
+  - f1_at_fixed_alert_budget
+  alert_budgets:
+  - 0.01
+  - 0.05
+  - 0.1
+  - 0.2
+estimands:
+  delta_local: PR_AUC(local_plus_topology) - PR_AUC(local)
+  delta_full: PR_AUC(full_plus_topology) - PR_AUC(full_supplied)
+  redundancy_contrast: delta_local - delta_full
+practical_margin_pr_auc: 0.01
+confidence_level: 0.95
+bootstrap:
+  observation_level_repetitions: 2000
+  time_step_block_repetitions: 2000
+classification:
+  helpful: lower_confidence_bound_greater_than_positive_margin
+  harmful: upper_confidence_bound_less_than_negative_margin
+  practically_neutral: confidence_interval_entirely_within_equivalence_band
+  uncertain: otherwise
+selection_prohibitions:
+- No feature-family changes after viewing extension-window or historical-holdout results.
+- No model-family selection using time steps 31-49.
+- No change to the 0.01 practical margin after results are viewed.
+- No claim of causal redundancy from predictive ablation alone.
+- No description of time steps 41-49 as a newly untouched confirmatory test.
+feature_manifest_sha256: 3574062ab2bdaddd3eb17e33f39355ad1158854b2a60678b236abbce159a2e8b
+practical_margin_rationale: Inherited prospectively from Study 1 feature-selection policy; used as a project-defined
+  materiality threshold, not an industry standard.
+uncertainty_policy:
+  primary_interval: paired_time_step_block_bootstrap
+  secondary_interval: paired_observation_level_bootstrap_sensitivity
+  development_folds: report_fold_specific_deltas_descriptively; four folds are not treated as independent
+    replicates
+  limited_block_warning: extension and historical windows contain only 10 and 9 time steps; intervals
+    will be interpreted cautiously
