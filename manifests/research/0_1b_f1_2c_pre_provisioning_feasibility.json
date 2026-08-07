@@ -1,0 +1,192 @@
+{
+    "schema_version":  1,
+    "program":  "MIZAN-GATE",
+    "study":  "0.1B",
+    "record":  "F1.2C pre-provisioning feasibility",
+    "record_date":  "2026-08-08",
+    "record_type":  "no-results feasibility consolidation",
+    "repository":  {
+                       "branch":  "research/0.1b-feasibility",
+                       "parent_commit":  "2f3c2f943fef85c3401783594ca3da7459a7d762",
+                       "main_closed_0_1a_commit":  "10e647d196d0f8c5794883cad8e7884658f2deb0"
+                   },
+    "scientific_status":  {
+                              "predictive_modeling_started":  false,
+                              "breakthrough_established":  false,
+                              "pre_provisioning_feasibility":  "PASS",
+                              "runtime_certification_required":  true
+                          },
+    "primary_epoch":  {
+                          "status":  "FROZEN",
+                          "definition":  "end of target confirmation block",
+                          "h0_rule":  "block_height \u003c= target_block_height",
+                          "same_block_evidence":  "eligible",
+                          "within_block_order_required":  false,
+                          "interpretation":  "post-confirmation block-end risk assessment"
+                      },
+    "mapping":  {
+                    "elliptic_transactions":  203769,
+                    "mapped_transactions":  202804,
+                    "unresolved_transactions":  965,
+                    "exact_txid_coverage_percent":  99.526424529737,
+                    "all_49_timesteps_represented":  true,
+                    "raw_mapping_committed":  false,
+                    "mapping_license":  "unresolved / Unknown",
+                    "correctness_claim":  "not globally established",
+                    "authoritative_prior_record":  "F1.2B_MAPPING_PROVENANCE_AND_COVERAGE"
+                },
+    "frozen_sources":  {
+                           "builder":  {
+                                           "repository":  "nesfit/BitcoinTxSubgraphBuilder",
+                                           "commit":  "8e01503c0f9f384402288509bdd5fc102590bcfb",
+                                           "tree":  "13b6abadc955973535b547c4aabe5c6711f3ee1c",
+                                           "license":  "GPL-3"
+                                       },
+                           "blockbook":  {
+                                             "repository":  "trezor/blockbook",
+                                             "commit":  "6ce54d0b22cccccabf09aea3b096197195b5bb5a",
+                                             "tree":  "1a921173d48d1769a741199ba8e301ccb5150c34"
+                                         },
+                           "bitcoin_core":  {
+                                                "repository":  "bitcoin/bitcoin",
+                                                "release":  "v31.1",
+                                                "commit":  "9be056a8a72b624dae9623b2f7bded92c2a21c91",
+                                                "tree":  "109dc8b3413dae47f00add3e30e50cde454c6f8c",
+                                                "consensus_h_sha256":  "c1cacb249d3a21ac482335f7ad7dff07f4f3c1fd47efa7f07249715db00b5ca8"
+                                            }
+                       },
+    "source_supported_semantics":  {
+                                       "builder_address_collector":  "explicit historical target-height ceiling",
+                                       "builder_graph_expansion":  "graph-distance bounded; separate explicit block-height filter required",
+                                       "blockbook_fixed_range":  "explicit bounded historical range supported",
+                                       "blockbook_continuous_sync":  "tip-aware",
+                                       "bitcoin_core_stopatheight":  "shutdown trigger at connected height \u003e= N; exact hard ceiling not guaranteed",
+                                       "scientific_cutoff_from_core_tip":  false
+                                   },
+    "elliptic_source_envelope":  {
+                                     "minimum_block_height":  391200,
+                                     "maximum_block_height":  487975,
+                                     "timesteps":  49,
+                                     "distinct_explicit_block_heights":  473,
+                                     "exact_mapped_subset_envelope":  "UNRESOLVED"
+                                 },
+    "conservative_baseline_chain":  {
+                                        "bitcoin_core_from":  0,
+                                        "bitcoin_core_through":  487975,
+                                        "blockbook_from":  0,
+                                        "blockbook_through":  487975,
+                                        "validated_checkpoint_shortcut_adopted":  false,
+                                        "future_horizon_extension_included":  false
+                                    },
+    "architecture":  {
+                         "execution_host":  "dedicated x86_64 / AMD64 Linux",
+                         "required":  [
+                                          "PostgreSQL",
+                                          ".NET 8",
+                                          "Bitcoin Core",
+                                          "dedicated Blockbook",
+                                          "pinned BitcoinTxSubgraphBuilder"
+                                      ],
+                         "not_required_for_reconstruction_closure":  [
+                                                                         "CUDA",
+                                                                         "DGL",
+                                                                         "PyTorch",
+                                                                         "full upstream ML Conda environment"
+                                                                     ],
+                         "public_bulk_blockbook_authorized":  false
+                     },
+    "capacity":  {
+                     "classification":  "conservative engineering envelope",
+                     "historical_raw_chain_allowance_gb":  130,
+                     "core_txindex_reserve_gb":  20,
+                     "core_state_metadata_gb":  10,
+                     "blockbook_rocksdb_reserve_gb":  180,
+                     "postgres_and_artifacts_gb":  50,
+                     "temporary_workspace_gb":  50,
+                     "component_total_gb":  440,
+                     "safety_headroom_percent":  25,
+                     "safety_headroom_gb":  110,
+                     "planning_envelope_gb":  550,
+                     "measured_usage":  "UNKNOWN"
+                 },
+    "working_provisioning":  {
+                                 "baseline":  {
+                                                  "ram_gb":  32,
+                                                  "vcpu":  8,
+                                                  "disk_gb_decimal":  1000,
+                                                  "disk_type":  "fast SSD",
+                                                  "classification":  "working baseline; not final minimum"
+                                              },
+                                 "high_headroom":  {
+                                                       "ram_gb":  64,
+                                                       "vcpu":  16,
+                                                       "disk_gb_decimal":  2000,
+                                                       "disk_type":  "fast SSD"
+                                                   }
+                             },
+    "horizon_capacity_sensitivities":  [
+                                           {
+                                               "blocks":  1,
+                                               "maximum_raw_increment_gb":  0.004
+                                           },
+                                           {
+                                               "blocks":  6,
+                                               "maximum_raw_increment_gb":  0.024
+                                           },
+                                           {
+                                               "blocks":  144,
+                                               "maximum_raw_increment_gb":  0.576,
+                                               "residual_capacity_gb":  450,
+                                               "amplification_room":  781.25
+                                           },
+                                           {
+                                               "blocks":  2016,
+                                               "maximum_raw_increment_gb":  8.064
+                                           },
+                                           {
+                                               "blocks":  10080,
+                                               "maximum_raw_increment_gb":  40.32
+                                           }
+                                       ],
+    "horizon_capacity_note":  "Engineering sensitivities only; none are frozen scientific horizons.",
+    "unresolved":  [
+                       "numerical scientific horizons",
+                       "retrospective horizon R",
+                       "exact mapped-subset transaction-height envelope",
+                       "safe transaction-intrinsic core C",
+                       "point-in-time address-history rules A_h",
+                       "label-free graph feature definitions G_h",
+                       "common eligible cohort",
+                       "strict temporal/entity independence",
+                       "attrition and coverage thresholds",
+                       "uncertainty procedure",
+                       "alert-budget reporting rules",
+                       "runtime certification",
+                       "measured resource usage",
+                       "final minimum VM",
+                       "full reconstruction coverage"
+                   ],
+    "rights_firewall":  {
+                            "elliptic_dataset_license":  "CC BY-NC-ND 4.0",
+                            "mapping_license":  "Unknown / unresolved",
+                            "builder_license":  "GPL-3",
+                            "raw_mapping_in_repository":  false,
+                            "commercial_reuse_claimed":  false
+                        },
+    "predictive_firewall":  {
+                                "pr_auc_computed":  false,
+                                "roc_auc_computed":  false,
+                                "predictive_f1_computed":  false,
+                                "graph_utility_computed":  false,
+                                "delta_g_0_known":  false,
+                                "delta_g_h_known":  false,
+                                "retrospective_gap_known":  false
+                            },
+    "evidence_artifacts":  {
+                               "f1_2c_3_micro_reconstruction_sha256":  "8fe7835b9cf5e4d98c3337c559dc5b5596847030688504fa364bbf9b880ad8ca",
+                               "f1_2c_5_architecture_sha256":  "86aea802b7baa1fa5871a75b534734ff2f26da3cd138fcbd79e182e431594964",
+                               "sealed_f1_2b_report_sha256":  "cd9d766be56bf1b40f966adb25c8dfa8024fa3e4b0312d78cea11b5348c740c6",
+                               "sealed_f1_2b_manifest_sha256":  "3e9d620d3e3e3a0cdce67394937896c93b70db8b35f88185eff491c19fba4f65"
+                           },
+    "next_phase":  "freeze remaining scientific feasibility/design decisions before provisioning and predictive modeling"
+}
