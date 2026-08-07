@@ -1,0 +1,50 @@
+schema_version: "1.0"
+contract_id: elliptic_study1_replication_v1
+dataset: elliptic_bitcoin_transactions
+source_study:
+  repository: zebunneen004-ai/graph-financial-crime-detection
+  tag: v2.0.2
+  commit: bf807ef4e3af534d1d0eaa26b1a6cc56c7715b95
+  definitive_python: "3.14.6"
+raw_input_sha256:
+  elliptic_txs_classes.csv: 93e2e7b2405c735ba752bf6ba06b947561deddd1f5a8fc91e46f6a4c0e439493
+  elliptic_txs_edgelist.csv: a35053ba68a98e4382cae2ba65b9d9e36b23b6439e02dff084971b1b72a5156e
+  elliptic_txs_features.csv: fd7f83573443c9e302e371d3f110e3b6224160f5d1ed8a287757936127800ff0
+processed_artifacts:
+  labeled_features:
+    relative_path: data/processed/labeled_features.parquet
+    sha256: 23d2baa472c13a839da1bbc988ab8f9f35b13d635685a6f0b2f99df89bfe1b81
+    rows: 46564
+    columns: 168
+  graph_features:
+    relative_path: data/processed/graph_features.parquet
+    sha256: 3d2848318bd8980855885432aeb2c7e2d4608f27d06391e01f6833f4f2375604
+    rows: 203769
+    columns: 10
+  node_index:
+    relative_path: data/processed/node_index.parquet
+    sha256: 46057097f9d223e03d6aecb8747e609dc890f6a207c2b2051994b91642cc966e
+    rows: 203769
+    columns: 2
+semantic_contract:
+  labeled_rows: 46564
+  all_nodes: 203769
+  time_steps:
+    minimum: 1
+    maximum: 49
+  label_values: [0, 1]
+  supplied_predictor_count: 165
+  completed_topology_predictors:
+    - in_degree
+    - out_degree
+    - pagerank_relative
+    - clustering
+    - k_core
+  excluded_graph_columns:
+    total_degree: deterministic_sum_of_in_degree_and_out_degree
+    pagerank_raw_snapshot: descriptive_only
+    weak_component_size: snapshot_size_proxy_sensitivity_only
+notes:
+  - This contract records the independently reproduced Study 1 artifacts used as read-only inputs to MIZAN-GATE.
+  - The processed-artifact hashes are lineage locks for the verified local replication, not claims that Parquet bytes are portable across every software environment.
+  - MIZAN-GATE must not mutate Study 1 artifacts.
