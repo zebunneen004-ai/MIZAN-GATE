@@ -8,6 +8,6 @@ build/
 dist/
 data/raw/
 data/processed/
-results/
+/results/
 models/
 logs/

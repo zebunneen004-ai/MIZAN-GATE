@@ -30,12 +30,16 @@ The validation command checks both the manifest structure and the SHA-256 pinned
 
 ## Research status
 
-- Study 1 lineage anchored
-- Exact feature families and combinations registered
-- Feature manifest cryptographically pinned in the experiment specification
-- Primary estimand, seed aggregation, practical margin, and uncertainty policy frozen
-- External timestamp pending until the design is pushed to a versioned public record
-- New redundancy models not yet run
+- Study 1 lineage is anchored to release `v2.0.2` and commit `bf807ef4e3af534d1d0eaa26b1a6cc56c7715b95`.
+- The MIZAN-GATE 0.1A design, feature contract, temporal policy, and implementation were versioned before the first real 0.1A result run.
+- The result-producing MIZAN-GATE implementation was commit `3a4270a237774ceb9d17e3893f6ccf822cbe4e22`.
+- The first real MIZAN-GATE 0.1A run completed successfully on 2026-08-07.
+- In the locked 31-40 extension, the registered redundancy contrast was `R = 0.003155`, with a 95% paired time-step block bootstrap interval of `[0.001195, 0.006566]`; under the preregistered `0.01 PR-AUC` practical margin, the result was classified as `practically_neutral`.
+- In the historically known 41-49 extension, `R = -0.001970`, with a 95% paired time-step block bootstrap interval of `[-0.004565, 0.002381]`; this result was also classified as `practically_neutral`.
+- The registered primary practical-materiality hypothesis was therefore not supported, and breakthrough status is `not_established`.
+- Time steps 41-49 remain historically known secondary evidence and are not described as a newly untouched confirmatory sample.
+- Human-readable post-result record: [`docs/results/elliptic_redundancy_v0_1_results.md`](docs/results/elliptic_redundancy_v0_1_results.md).
+- Machine-readable post-result manifest: [`manifests/results/elliptic_redundancy_v0_1_post_result.json`](manifests/results/elliptic_redundancy_v0_1_post_result.json).
 
 ## Disclaimer
 

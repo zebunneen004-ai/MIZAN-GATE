@@ -1,0 +1,693 @@
+{
+  "created_utc": "2026-08-07T17:07:07.639515+00:00",
+  "declaration": "This record was created after MIZAN-GATE 0.1A results had been generated and inspected. It is not a preregistration and does not modify the frozen research question, estimands, feature families, model, temporal policy, practical margin, or uncertainty policy.",
+  "evidence_identity": {
+    "frozen_results_archive": {
+      "bytes": 2091822,
+      "file": "MIZAN_GATE_0_1A_RESULTS_ORIGINAL.zip",
+      "sha256": "f7889bb380607288a0dc239dee78e29bf26aed52752e811873e275983b718247"
+    },
+    "output_hash_manifest": {
+      "bytes": 898,
+      "file": "MIZAN_GATE_0_1A_OUTPUT_HASHES.csv",
+      "sha256": "8d5c00b8112e62ba56c6f7d89495293fcf759ad488ffc3fa569522f412aa1310"
+    },
+    "registered_result_artifacts": [
+      {
+        "bytes": 22304,
+        "file": "alert_budget_metrics.csv",
+        "sha256": "9b80c4d2e59483df2c6a5123ab443076a159a8ae6b218803f9dc2f8a1b8f364f"
+      },
+      {
+        "bytes": 2668,
+        "file": "bootstrap_intervals.csv",
+        "sha256": "b58477e9b9b806e4df26c29c48c07dcacb1e0886c81438158d5f127306165745"
+      },
+      {
+        "bytes": 1229,
+        "file": "estimands.csv",
+        "sha256": "412ada26d65991d4406f2196b35bc5155c73bee1afc5830936dbef1485ec0f4b"
+      },
+      {
+        "bytes": 2368042,
+        "file": "predictions.parquet",
+        "sha256": "b17753c461382e2792bb4881e79071d86aa425f924999d7ca62fd035778b68ce"
+      },
+      {
+        "bytes": 2625,
+        "file": "resolved_plan.json",
+        "sha256": "51f5c86a390a75e77ff78d73182b0c07328b57cbfb2a519e54d868a75bdc8821"
+      },
+      {
+        "bytes": 4374,
+        "file": "run_metadata.json",
+        "sha256": "c96f3c4f986b3f083a9765370afd4f4d06159cbc6ad0761b47214570c99b9e40"
+      },
+      {
+        "bytes": 5706,
+        "file": "seed_estimands.csv",
+        "sha256": "fd7dec5eb751fdf7bb35886c82054a65aa42f1b021c8766bab38c47a49d83a98"
+      },
+      {
+        "bytes": 16047,
+        "file": "seed_metrics.csv",
+        "sha256": "11120d42cde993638c8ab10080babb53a86ab9c409669c14d824d2aed3ab6556"
+      },
+      {
+        "bytes": 6182,
+        "file": "window_metrics.csv",
+        "sha256": "6b9385e059df3f1e31db08930ac9d520c8f193de7b1893a8189c4b1de1f0ba18"
+      }
+    ],
+    "run_log": {
+      "bytes": 8750,
+      "file": "MIZAN_GATE_0_1A_run.log",
+      "sha256": "1053254b4673d224aa0a05a88f2bef6e12de9e36b0dc3e1b5bae6658e79b920f"
+    }
+  },
+  "experiment_id": "elliptic_redundancy_v0_1",
+  "fixed_alert_budget_operating_evidence": {
+    "extension_31_40": {
+      "full_plus_topology": {
+        "0.01": {
+          "alerts": 97,
+          "f1": 0.1666666666666666,
+          "false_negatives": 970,
+          "false_positives": 0,
+          "precision": 1.0,
+          "recall": 0.0909090909090909,
+          "true_positives": 97
+        },
+        "0.05": {
+          "alerts": 485,
+          "f1": 0.6237113402061856,
+          "false_negatives": 583,
+          "false_positives": 1,
+          "precision": 0.9979381443298968,
+          "recall": 0.4536082474226804,
+          "true_positives": 484
+        },
+        "0.10": {
+          "alerts": 969,
+          "f1": 0.93713163064833,
+          "false_negatives": 113,
+          "false_positives": 15,
+          "precision": 0.9845201238390092,
+          "recall": 0.8940955951265229,
+          "true_positives": 954
+        },
+        "0.20": {
+          "alerts": 1938,
+          "f1": 0.6762063227953411,
+          "false_negatives": 51,
+          "false_positives": 922,
+          "precision": 0.5242518059855521,
+          "recall": 0.9522024367385192,
+          "true_positives": 1016
+        }
+      },
+      "full_supplied": {
+        "0.01": {
+          "alerts": 97,
+          "f1": 0.1666666666666666,
+          "false_negatives": 970,
+          "false_positives": 0,
+          "precision": 1.0,
+          "recall": 0.0909090909090909,
+          "true_positives": 97
+        },
+        "0.05": {
+          "alerts": 485,
+          "f1": 0.625,
+          "false_negatives": 582,
+          "false_positives": 0,
+          "precision": 1.0,
+          "recall": 0.4545454545454545,
+          "true_positives": 485
+        },
+        "0.10": {
+          "alerts": 969,
+          "f1": 0.9351669941060904,
+          "false_negatives": 115,
+          "false_positives": 17,
+          "precision": 0.9824561403508772,
+          "recall": 0.8922211808809747,
+          "true_positives": 952
+        },
+        "0.20": {
+          "alerts": 1938,
+          "f1": 0.675540765391015,
+          "false_negatives": 52,
+          "false_positives": 923,
+          "precision": 0.5237358101135191,
+          "recall": 0.9512652296157452,
+          "true_positives": 1015
+        }
+      },
+      "local": {
+        "0.01": {
+          "alerts": 97,
+          "f1": 0.1666666666666666,
+          "false_negatives": 970,
+          "false_positives": 0,
+          "precision": 1.0,
+          "recall": 0.0909090909090909,
+          "true_positives": 97
+        },
+        "0.05": {
+          "alerts": 485,
+          "f1": 0.625,
+          "false_negatives": 582,
+          "false_positives": 0,
+          "precision": 1.0,
+          "recall": 0.4545454545454545,
+          "true_positives": 485
+        },
+        "0.10": {
+          "alerts": 969,
+          "f1": 0.9086444007858546,
+          "false_negatives": 142,
+          "false_positives": 44,
+          "precision": 0.954592363261094,
+          "recall": 0.8669165885660731,
+          "true_positives": 925
+        },
+        "0.20": {
+          "alerts": 1938,
+          "f1": 0.6735440931780367,
+          "false_negatives": 55,
+          "false_positives": 926,
+          "precision": 0.52218782249742,
+          "recall": 0.9484536082474226,
+          "true_positives": 1012
+        }
+      },
+      "local_plus_topology": {
+        "0.01": {
+          "alerts": 97,
+          "f1": 0.1666666666666666,
+          "false_negatives": 970,
+          "false_positives": 0,
+          "precision": 1.0,
+          "recall": 0.0909090909090909,
+          "true_positives": 97
+        },
+        "0.05": {
+          "alerts": 485,
+          "f1": 0.625,
+          "false_negatives": 582,
+          "false_positives": 0,
+          "precision": 1.0,
+          "recall": 0.4545454545454545,
+          "true_positives": 485
+        },
+        "0.10": {
+          "alerts": 969,
+          "f1": 0.9155206286836935,
+          "false_negatives": 135,
+          "false_positives": 37,
+          "precision": 0.9618163054695562,
+          "recall": 0.8734770384254921,
+          "true_positives": 932
+        },
+        "0.20": {
+          "alerts": 1938,
+          "f1": 0.6788685524126455,
+          "false_negatives": 47,
+          "false_positives": 918,
+          "precision": 0.5263157894736842,
+          "recall": 0.9559512652296156,
+          "true_positives": 1020
+        }
+      }
+    },
+    "historical_41_49": {
+      "full_plus_topology": {
+        "0.01": {
+          "alerts": 100,
+          "f1": 0.3205128205128205,
+          "false_negatives": 424,
+          "false_positives": 0,
+          "precision": 1.0,
+          "recall": 0.1908396946564885,
+          "true_positives": 100
+        },
+        "0.05": {
+          "alerts": 499,
+          "f1": 0.606060606060606,
+          "false_negatives": 214,
+          "false_positives": 189,
+          "precision": 0.6212424849699398,
+          "recall": 0.5916030534351145,
+          "true_positives": 310
+        },
+        "0.10": {
+          "alerts": 998,
+          "f1": 0.4244415243101183,
+          "false_negatives": 201,
+          "false_positives": 675,
+          "precision": 0.3236472945891783,
+          "recall": 0.6164122137404581,
+          "true_positives": 323
+        },
+        "0.20": {
+          "alerts": 1995,
+          "f1": 0.278682016673283,
+          "false_negatives": 173,
+          "false_positives": 1644,
+          "precision": 0.1759398496240601,
+          "recall": 0.6698473282442748,
+          "true_positives": 351
+        }
+      },
+      "full_supplied": {
+        "0.01": {
+          "alerts": 100,
+          "f1": 0.3205128205128205,
+          "false_negatives": 424,
+          "false_positives": 0,
+          "precision": 1.0,
+          "recall": 0.1908396946564885,
+          "true_positives": 100
+        },
+        "0.05": {
+          "alerts": 499,
+          "f1": 0.6080156402737047,
+          "false_negatives": 213,
+          "false_positives": 188,
+          "precision": 0.6232464929859719,
+          "recall": 0.5935114503816794,
+          "true_positives": 311
+        },
+        "0.10": {
+          "alerts": 998,
+          "f1": 0.4231274638633377,
+          "false_negatives": 202,
+          "false_positives": 676,
+          "precision": 0.3226452905811623,
+          "recall": 0.6145038167938931,
+          "true_positives": 322
+        },
+        "0.20": {
+          "alerts": 1995,
+          "f1": 0.2739182215164747,
+          "false_negatives": 179,
+          "false_positives": 1650,
+          "precision": 0.1729323308270676,
+          "recall": 0.6583969465648855,
+          "true_positives": 345
+        }
+      },
+      "local": {
+        "0.01": {
+          "alerts": 100,
+          "f1": 0.3205128205128205,
+          "false_negatives": 424,
+          "false_positives": 0,
+          "precision": 1.0,
+          "recall": 0.1908396946564885,
+          "true_positives": 100
+        },
+        "0.05": {
+          "alerts": 499,
+          "f1": 0.576735092864125,
+          "false_negatives": 229,
+          "false_positives": 204,
+          "precision": 0.591182364729459,
+          "recall": 0.5629770992366412,
+          "true_positives": 295
+        },
+        "0.10": {
+          "alerts": 998,
+          "f1": 0.4231274638633377,
+          "false_negatives": 202,
+          "false_positives": 676,
+          "precision": 0.3226452905811623,
+          "recall": 0.6145038167938931,
+          "true_positives": 322
+        },
+        "0.20": {
+          "alerts": 1995,
+          "f1": 0.2794759825327511,
+          "false_negatives": 172,
+          "false_positives": 1643,
+          "precision": 0.1764411027568922,
+          "recall": 0.6717557251908397,
+          "true_positives": 352
+        }
+      },
+      "local_plus_topology": {
+        "0.01": {
+          "alerts": 100,
+          "f1": 0.3205128205128205,
+          "false_negatives": 424,
+          "false_positives": 0,
+          "precision": 1.0,
+          "recall": 0.1908396946564885,
+          "true_positives": 100
+        },
+        "0.05": {
+          "alerts": 499,
+          "f1": 0.5806451612903226,
+          "false_negatives": 227,
+          "false_positives": 202,
+          "precision": 0.5951903807615231,
+          "recall": 0.566793893129771,
+          "true_positives": 297
+        },
+        "0.10": {
+          "alerts": 998,
+          "f1": 0.4204993429697766,
+          "false_negatives": 204,
+          "false_positives": 678,
+          "precision": 0.3206412825651302,
+          "recall": 0.6106870229007634,
+          "true_positives": 320
+        },
+        "0.20": {
+          "alerts": 1995,
+          "f1": 0.2810639142516872,
+          "false_negatives": 170,
+          "false_positives": 1641,
+          "precision": 0.1774436090225564,
+          "recall": 0.6755725190839694,
+          "true_positives": 354
+        }
+      }
+    }
+  },
+  "hypothesis_verdicts": [
+    {
+      "id": "primary_R_material",
+      "reason": "Extension R was positive, but the complete primary 95% interval was inside [-0.01, +0.01]; historical R was negative with a primary interval that also remained inside the practical-neutrality region.",
+      "registered_hypothesis": "R > 0 with R >= 0.01 PR-AUC treated as practically material",
+      "verdict": "not_supported_as_practically_material"
+    },
+    {
+      "id": "secondary_full_minus_local",
+      "reason": "The point estimate was positive in both later windows and the registered paired time-step bootstrap interval for full_minus_local was entirely above zero.",
+      "registered_hypothesis": "M(F) - M(L) > 0",
+      "verdict": "supported_in_both_later_windows_as_secondary_evidence"
+    },
+    {
+      "id": "secondary_delta_local",
+      "reason": "Delta_L was positive in the 31-40 extension but negative in 41-49; development-fold directions were also mixed.",
+      "registered_hypothesis": "Delta_L > 0",
+      "verdict": "not_supported_as_temporally_stable"
+    },
+    {
+      "id": "secondary_delta_full_neutrality",
+      "reason": "The complete registered primary intervals for Delta_F lay inside [-0.01, +0.01] in both later windows; observation-bootstrap sensitivity evidence agreed.",
+      "registered_hypothesis": "|Delta_F| <= 0.01 as the practical-neutrality target",
+      "verdict": "supported_as_practically_neutral_in_both_later_windows"
+    },
+    {
+      "id": "secondary_directional_stability",
+      "reason": "Development-fold signs were mixed, all five extension seed contrasts were positive, and four of five historical seed contrasts were negative.",
+      "registered_hypothesis": "Direction of the primary contrast is reasonably stable across temporal folds and matched random seeds",
+      "verdict": "not_supported"
+    }
+  ],
+  "limitations": [
+    "Single public Elliptic dataset.",
+    "Anonymous supplied predictors limit semantic interpretation.",
+    "Transaction nodes are not equivalent to customer or entity graphs.",
+    "Labels are incomplete and class prevalence changes through time.",
+    "The five topology features are simple completed-snapshot statistics.",
+    "Decision-time availability of completed topology is not established in 0.1A.",
+    "The 31-40 and 41-49 windows contain only 10 and 9 time-step blocks respectively.",
+    "Time steps 41-49 were historically known from Study 1 and are not a newly untouched confirmatory sample.",
+    "No external dataset replication is provided by 0.1A.",
+    "No neural graph representation is evaluated in 0.1A.",
+    "No UAE operational transaction data are used."
+  ],
+  "next_research_question_status": "No subsequent experiment is defined by this closure record. Any MIZAN-GATE 0.1B design must be prospectively specified and timestamped before affected results are viewed.",
+  "provenance": {
+    "feature_manifest_sha256": "3574062ab2bdaddd3eb17e33f39355ad1158854b2a60678b236abbce159a2e8b",
+    "mizan_gate_implementation_commit": "3a4270a237774ceb9d17e3893f6ccf822cbe4e22",
+    "run_completed_utc": "2026-08-07T16:30:24.988362+00:00",
+    "software": {
+      "numpy": "2.4.6",
+      "pandas": "2.3.3",
+      "pyarrow": "24.0.0",
+      "python": "3.14.6",
+      "scikit_learn": "1.9.0",
+      "scipy": "1.18.0",
+      "xgboost": "3.3.0"
+    },
+    "study1_artifact_sha256": {
+      "graph_features": "3d2848318bd8980855885432aeb2c7e2d4608f27d06391e01f6833f4f2375604",
+      "labeled_features": "23d2baa472c13a839da1bbc988ab8f9f35b13d635685a6f0b2f99df89bfe1b81",
+      "node_index": "46057097f9d223e03d6aecb8747e609dc890f6a207c2b2051994b91642cc966e"
+    },
+    "study1_contract_id": "elliptic_study1_replication_v1",
+    "study1_source_commit": "bf807ef4e3af534d1d0eaa26b1a6cc56c7715b95"
+  },
+  "record_id": "elliptic_redundancy_v0_1_post_result",
+  "record_type": "post_result_closure_record",
+  "registered_intervals": {
+    "extension_31_40": {
+      "primary": {
+        "delta_full": {
+          "classification": "practically_neutral",
+          "confidence_level": 0.95,
+          "estimate": 2.5396430970658912e-05,
+          "lower": -0.0009323169396248,
+          "method": "time_step_block",
+          "random_seed": 20260807,
+          "repetitions": 2000,
+          "upper": 0.0013287613855313
+        },
+        "delta_local": {
+          "classification": "practically_neutral",
+          "confidence_level": 0.95,
+          "estimate": 0.0031805974834971,
+          "lower": 0.0007634006245701,
+          "method": "time_step_block",
+          "random_seed": 20260807,
+          "repetitions": 2000,
+          "upper": 0.0071112393563141
+        },
+        "full_minus_local": {
+          "classification": "not_applicable",
+          "confidence_level": 0.95,
+          "estimate": 0.0100575027907878,
+          "lower": 0.0043061801310234,
+          "method": "time_step_block",
+          "random_seed": 20260807,
+          "repetitions": 2000,
+          "upper": 0.0229763166174496
+        },
+        "redundancy_contrast": {
+          "classification": "practically_neutral",
+          "confidence_level": 0.95,
+          "estimate": 0.0031552010525265,
+          "lower": 0.0011947106443958,
+          "method": "time_step_block",
+          "random_seed": 20260807,
+          "repetitions": 2000,
+          "upper": 0.0065659426436356
+        }
+      },
+      "sensitivity": {
+        "delta_full": {
+          "classification": "practically_neutral",
+          "confidence_level": 0.95,
+          "estimate": 2.5396430970658912e-05,
+          "lower": -0.0006757470847337,
+          "method": "observation",
+          "random_seed": 20260808,
+          "repetitions": 2000,
+          "upper": 0.0007358415924829
+        },
+        "delta_local": {
+          "classification": "practically_neutral",
+          "confidence_level": 0.95,
+          "estimate": 0.0031805974834971,
+          "lower": 0.0017248228634002,
+          "method": "observation",
+          "random_seed": 20260808,
+          "repetitions": 2000,
+          "upper": 0.0048235777226321
+        },
+        "full_minus_local": {
+          "classification": "not_applicable",
+          "confidence_level": 0.95,
+          "estimate": 0.0100575027907878,
+          "lower": 0.0061530963929752,
+          "method": "observation",
+          "random_seed": 20260808,
+          "repetitions": 2000,
+          "upper": 0.0143996897554717
+        },
+        "redundancy_contrast": {
+          "classification": "practically_neutral",
+          "confidence_level": 0.95,
+          "estimate": 0.0031552010525265,
+          "lower": 0.0016478451326802,
+          "method": "observation",
+          "random_seed": 20260808,
+          "repetitions": 2000,
+          "upper": 0.004783275938746
+        }
+      }
+    },
+    "historical_41_49": {
+      "primary": {
+        "delta_full": {
+          "classification": "practically_neutral",
+          "confidence_level": 0.95,
+          "estimate": -1.0347559623702374e-05,
+          "lower": -0.0018504163972417,
+          "method": "time_step_block",
+          "random_seed": 20270807,
+          "repetitions": 2000,
+          "upper": 0.0021780937004779
+        },
+        "delta_local": {
+          "classification": "practically_neutral",
+          "confidence_level": 0.95,
+          "estimate": -0.0019806714226876,
+          "lower": -0.0036961204989906,
+          "method": "time_step_block",
+          "random_seed": 20270807,
+          "repetitions": 2000,
+          "upper": 0.0012065340881338
+        },
+        "full_minus_local": {
+          "classification": "not_applicable",
+          "confidence_level": 0.95,
+          "estimate": 0.0251202713534667,
+          "lower": 0.0014201538770588,
+          "method": "time_step_block",
+          "random_seed": 20270807,
+          "repetitions": 2000,
+          "upper": 0.040034841659542
+        },
+        "redundancy_contrast": {
+          "classification": "practically_neutral",
+          "confidence_level": 0.95,
+          "estimate": -0.0019703238630639,
+          "lower": -0.0045647958127268,
+          "method": "time_step_block",
+          "random_seed": 20270807,
+          "repetitions": 2000,
+          "upper": 0.00238097892527
+        }
+      },
+      "sensitivity": {
+        "delta_full": {
+          "classification": "practically_neutral",
+          "confidence_level": 0.95,
+          "estimate": -1.0347559623702374e-05,
+          "lower": -0.0018099141812994,
+          "method": "observation",
+          "random_seed": 20270808,
+          "repetitions": 2000,
+          "upper": 0.001759224861211
+        },
+        "delta_local": {
+          "classification": "practically_neutral",
+          "confidence_level": 0.95,
+          "estimate": -0.0019806714226876,
+          "lower": -0.0049071669542227,
+          "method": "observation",
+          "random_seed": 20270808,
+          "repetitions": 2000,
+          "upper": 0.0009796323080196
+        },
+        "full_minus_local": {
+          "classification": "not_applicable",
+          "confidence_level": 0.95,
+          "estimate": 0.0251202713534667,
+          "lower": 0.0165770684231758,
+          "method": "observation",
+          "random_seed": 20270808,
+          "repetitions": 2000,
+          "upper": 0.0345341473799791
+        },
+        "redundancy_contrast": {
+          "classification": "practically_neutral",
+          "confidence_level": 0.95,
+          "estimate": -0.0019703238630639,
+          "lower": -0.0048882238279204,
+          "method": "observation",
+          "random_seed": 20270808,
+          "repetitions": 2000,
+          "upper": 0.0010728404521165
+        }
+      }
+    }
+  },
+  "registered_point_estimates": {
+    "extension_31_40": {
+      "delta_full": 2.5396430970658912e-05,
+      "delta_local": 0.0031805974834971,
+      "full_minus_local": 0.0100575027907878,
+      "m_full_plus_topology": 0.9589925530411766,
+      "m_full_supplied": 0.958967156610206,
+      "m_local": 0.948909653819418,
+      "m_local_plus_topology": 0.9520902513029152,
+      "redundancy_contrast": 0.0031552010525265
+    },
+    "historical_41_49": {
+      "delta_full": -1.0347559623702374e-05,
+      "delta_local": -0.0019806714226876,
+      "full_minus_local": 0.0251202713534667,
+      "m_full_plus_topology": 0.6451339626723913,
+      "m_full_supplied": 0.645144310232015,
+      "m_local": 0.6200240388785483,
+      "m_local_plus_topology": 0.6180433674558606,
+      "redundancy_contrast": -0.0019703238630639
+    }
+  },
+  "registered_secondary_descriptive_evidence": {
+    "extension_31_40": {
+      "aggregate_plus_topology_pr_auc": 0.8109287683923526,
+      "aggregate_pr_auc": 0.8041083928821624,
+      "topology_only_pr_auc": 0.1799165500396871
+    },
+    "historical_41_49": {
+      "aggregate_plus_topology_pr_auc": 0.5428469100175335,
+      "aggregate_pr_auc": 0.5385382794695185,
+      "topology_only_pr_auc": 0.0590537655575403
+    }
+  },
+  "schema_version": "1.0",
+  "scientific_conclusion": {
+    "allowed_claim": "Within the Elliptic dataset and the frozen MIZAN-GATE 0.1A protocol, five completed-snapshot topology features showed a small positive incremental PR-AUC contribution relative to the 93 local supplied predictors in time steps 31-40, but essentially no incremental contribution after the full 165 supplied feature matrix was already available. The registered redundancy contrast was classified as practically neutral under the preregistered \u00b10.01 PR-AUC margin and did not retain its positive direction in time steps 41-49.",
+    "breakthrough_status": "not_established",
+    "prohibited_claims": [
+      "The one-hop aggregate variables and topology variables are mathematically or semantically identical.",
+      "Graph information is universally useful or universally useless for AML.",
+      "The five completed-snapshot topology variables have no information in every representation or time period.",
+      "Completed-snapshot topology was available at transaction decision time.",
+      "The Elliptic result directly generalizes to UAE VASPs or production AML systems.",
+      "Predictive association establishes criminal intent, legal liability, or regulatory compliance.",
+      "MIZAN-GATE 0.1A establishes a universal Graph Utility Boundary.",
+      "MIZAN-GATE 0.1A is a breakthrough result."
+    ]
+  },
+  "stability": {
+    "development_redundancy_contrast_signs": {
+      "negative": 2,
+      "positive": 2,
+      "total": 4,
+      "zero": 0
+    },
+    "matched_seed_redundancy_contrast_signs": {
+      "extension_31_40": {
+        "negative": 0,
+        "positive": 5,
+        "total": 5,
+        "zero": 0
+      },
+      "historical_41_49": {
+        "negative": 4,
+        "positive": 1,
+        "total": 5,
+        "zero": 0
+      }
+    }
+  }
+}
