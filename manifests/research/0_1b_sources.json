@@ -1,0 +1,232 @@
+{
+  "manifest_version": "0.1",
+  "study": "MIZAN-GATE 0.1B",
+  "phase": "F1.1_authoritative_evidence_lock",
+  "status": "prospective_non_result_producing",
+  "created_utc": "2026-08-07T18:34:41.5662636Z",
+  "parent": {
+    "closure_tag": "elliptic-redundancy-v0.1a",
+    "closure_commit": "10e647d196d0f8c5794883cad8e7884658f2deb0",
+    "research_branch": "research/0.1b-feasibility"
+  },
+  "f1_policy": {
+    "predictive_model_fitting_allowed": false,
+    "predictive_metric_comparison_allowed": false,
+    "horizon_selection_from_predictive_results_allowed": false,
+    "permitted_outputs": [
+      "source_provenance",
+      "license_findings",
+      "mapping_coverage",
+      "block_height_validation",
+      "transaction_dependency_validation",
+      "address_statistics_feasibility",
+      "neighborhood_completeness",
+      "sample_counts",
+      "class_counts",
+      "entity_overlap",
+      "split_attrition",
+      "runtime_storage_dependency_feasibility"
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "type": "original_benchmark_paper",
+      "authors": [
+        "Mark Weber",
+        "Giacomo Domeniconi",
+        "Jie Chen",
+        "Daniel Karl I. Weidele",
+        "Claudio Bellei",
+        "Tom Robinson",
+        "Charles E. Leiserson"
+      ],
+      "year": 2019,
+      "title": "Anti-Money Laundering in Bitcoin: Experimenting with Graph Convolutional Networks for Financial Forensics",
+      "locator": {
+        "arxiv_id": "1908.02591"
+      },
+      "authority": "primary_benchmark_source"
+    },
+    {
+      "id": "S2",
+      "type": "official_dataset_card",
+      "publisher": "Elliptic / Kaggle",
+      "locator": {
+        "dataset_slug": "ellipticco/elliptic-data-set"
+      },
+      "license": "CC BY-NC-ND 4.0",
+      "authority": "primary_dataset_source"
+    },
+    {
+      "id": "S3",
+      "type": "peer_reviewed_forensic_audit",
+      "authors": [
+        "Miroslav Safar",
+        "Jan Pluskal",
+        "Vladimir Vesely",
+        "Ondrej Rysavy"
+      ],
+      "year": 2026,
+      "title": "The Enemy of Reproducibility is Opacity: What's Inside the Elliptic Bitcoin Dataset (and Why It Is Wrong)",
+      "locator": {
+        "doi": "10.1016/j.fsidi.2026.302124",
+        "journal": "Forensic Science International: Digital Investigation",
+        "volume": "57",
+        "article": "302124"
+      },
+      "authority": "peer_reviewed"
+    },
+    {
+      "id": "S4",
+      "type": "version_pinned_semantics_repository",
+      "repository": "nesfit/DeanonymizedEllipticBitcoinDataset",
+      "commit": "a5dbbcc655783003d942d0d54ad8404f0b7b3b93",
+      "readme_git_blob": "4dd6695526d5deaec04e84f85ce5fe50009412ff",
+      "license_status": "no_separate_commercial_reuse_right_assumed",
+      "authority": "version_pinned_supporting_source"
+    },
+    {
+      "id": "S5",
+      "type": "version_pinned_reconstruction_tool",
+      "repository": "nesfit/BitcoinTxSubgraphBuilder",
+      "commit": "8e01503c0f9f384402288509bdd5fc102590bcfb",
+      "readme_git_blob": "2565a03c22fecd8d9e4a16e55a656d304c0f2e7e",
+      "license": "GPL-3.0",
+      "observed_environment": [
+        "x86_64 Linux",
+        ".NET 8 SDK",
+        "Python 3.10.16",
+        "Conda"
+      ],
+      "authority": "version_pinned_reference_implementation"
+    },
+    {
+      "id": "S6",
+      "type": "protocol_documentation",
+      "publisher": "Bitcoin developer documentation",
+      "documents": [
+        "Transaction Reference",
+        "Transactions Developer Guide",
+        "Block Chain Developer Guide"
+      ],
+      "authority": "protocol_reference"
+    },
+    {
+      "id": "S7",
+      "type": "preprint_prior_art",
+      "authors": [
+        "Hamideh Khaleghpour",
+        "Brett McKinney"
+      ],
+      "year": 2026,
+      "title": "Leakage Safe Graph Features for Interpretable Fraud Detection in Temporal Transaction Networks",
+      "locator": {
+        "arxiv_id": "2603.06632",
+        "version": "v1"
+      },
+      "authority": "preprint"
+    },
+    {
+      "id": "S8",
+      "type": "preprint_prior_art",
+      "authors": [
+        "Saket Maganti"
+      ],
+      "year": 2026,
+      "title": "When Graph Structure Becomes a Liability: A Critical Re-Evaluation of Graph Neural Networks for Bitcoin Fraud Detection under Temporal Distribution Shift",
+      "locator": {
+        "arxiv_id": "2604.19514",
+        "version": "v1"
+      },
+      "authority": "preprint"
+    }
+  ],
+  "locked_claims": [
+    {
+      "id": "ELLIPTIC_TIME_001",
+      "statement": "Elliptic contains 49 approximately two-week-spaced time steps; each released time step is one connected component spanning transactions within less than approximately three hours, with no released edges between time steps.",
+      "source_ids": ["S1", "S2"]
+    },
+    {
+      "id": "ELLIPTIC_TIME_002",
+      "statement": "The original paper describes timing as estimated confirmation time, while the official dataset card describes it as broadcast timing; therefore the released time_step is not accepted by MIZAN as an exact transaction-level decision timestamp.",
+      "source_ids": ["S1", "S2"]
+    },
+    {
+      "id": "ELLIPTIC_FEATURE_001",
+      "statement": "The original feature matrix contains 94 nominally local features including time step and 72 aggregated one-hop neighborhood features.",
+      "source_ids": ["S1", "S2"]
+    },
+    {
+      "id": "ELLIPTIC_AUDIT_001",
+      "statement": "The 2026 peer-reviewed audit reports recovery of 91 of 94 local feature semantics and 60 of 72 aggregated neighborhood feature semantics.",
+      "source_ids": ["S3", "S4"]
+    },
+    {
+      "id": "ELLIPTIC_AUDIT_002",
+      "statement": "The audit reports that, excluding the explicit time-step field, 21 local predictors (features 2-22 in the recovered feature numbering) are directly transaction-scoped and that three of those 21 feature meanings remained unidentified.",
+      "source_ids": ["S3", "S4"]
+    },
+    {
+      "id": "ELLIPTIC_AUDIT_003",
+      "statement": "The audit reports that address-scoped features were computed relative to Bitcoin block height 575059 rather than each target transaction's own time.",
+      "source_ids": ["S3", "S4"]
+    },
+    {
+      "id": "ELLIPTIC_AUDIT_004",
+      "statement": "The audit reports dataset-wide z-score preprocessing, temporal leakage from future-scoped address information, entity nonindependence across standard splits, and truncated released transaction neighborhoods.",
+      "source_ids": ["S3"]
+    },
+    {
+      "id": "BITCOIN_CAUSAL_001",
+      "statement": "A non-coinbase Bitcoin transaction input spends an output of a previous transaction, giving transaction dependency edges a protocol-defined causal order.",
+      "source_ids": ["S6"]
+    }
+  ],
+  "prior_art_boundaries": [
+    {
+      "id": "BOUNDARY_001",
+      "source_id": "S7",
+      "not_novel_by_itself": [
+        "Elliptic graph construction using edges observed through timestep t",
+        "time-respecting degree features",
+        "time-respecting PageRank",
+        "time-respecting HITS",
+        "time-respecting k-core",
+        "chronological Elliptic evaluation"
+      ]
+    },
+    {
+      "id": "BOUNDARY_002",
+      "source_id": "S8",
+      "not_novel_by_itself": [
+        "strict-inductive versus transductive GNN evaluation on Elliptic",
+        "preventing training-time message passing over test-period graph data",
+        "real-edge versus shuffled-edge controls",
+        "real-edge versus no-edge controls"
+      ]
+    }
+  ],
+  "provisional_gap": {
+    "status": "working_hypothesis_not_novelty_claim",
+    "statement": "Graph utility may vary as a function of the explicitly reconstructed evidence-availability horizon at which a decision is required.",
+    "must_be_validated_by": [
+      "broader_prior_art_review",
+      "transaction_mapping_feasibility",
+      "block_height_reconstruction",
+      "time_scoped_address_feature_feasibility",
+      "complete_or_bounded_neighborhood_reconstruction",
+      "common_horizon_cohort_feasibility",
+      "entity_independence_feasibility"
+    ]
+  },
+  "commercial_firewall": {
+    "elliptic_usage": "research_validation_only",
+    "elliptic_license": "CC BY-NC-ND 4.0",
+    "redistribute_corrected_elliptic_dataset": false,
+    "copy_gpl_reference_code_into_proprietary_core_without_license_review": false,
+    "commercial_core_policy": "independently_authored_and_dependency_reviewed",
+    "legal_advice": false
+  }
+}
