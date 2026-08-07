@@ -2,3 +2,5 @@ PyYAML>=6.0,<7
 numpy>=2.0,<3
 pandas>=2.2,<3
 pyarrow>=18,<25
+scikit-learn==1.9.0
+xgboost==3.3.0

@@ -1,0 +1,31 @@
+schema_version: "1.0"
+implementation_id: elliptic_redundancy_runner_v0_1
+experiment_id: elliptic_redundancy_v0_1
+status: prospective_implementation_locked_before_real_results
+implementation_commit_requirement: commit_and_ci_before_real_elliptic_execution
+real_execution_python: "3.14.6"
+real_execution_versions:
+  numpy: "2.4.6"
+  pandas: "2.3.3"
+  pyarrow: "24.0.0"
+  scipy: "1.18.0"
+  scikit_learn: "1.9.0"
+  xgboost: "3.3.0"
+xgboost:
+  objective: binary:logistic
+  eval_metric: logloss
+  tree_method: hist
+  n_jobs: 1
+bootstrap:
+  random_seed: 20260807
+  interval_method: percentile
+  alpha: 0.05
+  maximum_attempt_multiplier: 20
+outputs:
+  directory_default: results/elliptic_redundancy_v0_1
+  prediction_format: parquet
+  numeric_metrics_format: csv
+notes:
+  - n_jobs=1 is locked prospectively to reduce implementation-level nondeterminism.
+  - The bootstrap random seed is an implementation reproducibility constant, not an inferential unit.
+  - Real Elliptic execution must occur only after this implementation is committed and CI is green.
