@@ -1,0 +1,364 @@
+{
+  "canonical_fingerprints": {
+    "canonical_mapping_pairs_sha256": "309760907589320cf35e74c5b0c1398a3abc5bd6b730e60fe3efcf91ea0cba87",
+    "elliptic_txid_set_sha256": "e3483c717347bbc5e0a4b360fea79a6415774679f86c66263f6454d18cc3f3f1",
+    "mapping_txid_set_sha256": "eff802cd010020b8d0fc30b34a8efa6392e9e31be02406e8876b46b37888f5af",
+    "missing_txid_set_sha256": "9c27e427893cc70dbf05d53af07abbad71817e30ee4e32c349c25cfc4d9c98e3"
+  },
+  "coverage_by_raw_label": {
+    "1": {
+      "coverage": 1.0,
+      "mapped": 4545,
+      "missing": 0,
+      "total": 4545
+    },
+    "2": {
+      "coverage": 0.987648444751184,
+      "mapped": 41500,
+      "missing": 519,
+      "total": 42019
+    },
+    "unknown": {
+      "coverage": 0.9971629401100474,
+      "mapped": 156759,
+      "missing": 446,
+      "total": 157205
+    }
+  },
+  "coverage_by_timestep": {
+    "1": {
+      "coverage": 0.9954314720812183,
+      "mapped": 7844,
+      "missing": 36,
+      "total": 7880
+    },
+    "10": {
+      "coverage": 1.0,
+      "mapped": 6727,
+      "missing": 0,
+      "total": 6727
+    },
+    "11": {
+      "coverage": 0.9983705772811918,
+      "mapped": 4289,
+      "missing": 7,
+      "total": 4296
+    },
+    "12": {
+      "coverage": 0.9960918417195896,
+      "mapped": 2039,
+      "missing": 8,
+      "total": 2047
+    },
+    "13": {
+      "coverage": 0.9973498233215548,
+      "mapped": 4516,
+      "missing": 12,
+      "total": 4528
+    },
+    "14": {
+      "coverage": 0.9990108803165183,
+      "mapped": 2020,
+      "missing": 2,
+      "total": 2022
+    },
+    "15": {
+      "coverage": 0.9956031876889255,
+      "mapped": 3623,
+      "missing": 16,
+      "total": 3639
+    },
+    "16": {
+      "coverage": 0.9959663865546219,
+      "mapped": 2963,
+      "missing": 12,
+      "total": 2975
+    },
+    "17": {
+      "coverage": 0.9964549483013294,
+      "mapped": 3373,
+      "missing": 12,
+      "total": 3385
+    },
+    "18": {
+      "coverage": 0.9964574898785425,
+      "mapped": 1969,
+      "missing": 7,
+      "total": 1976
+    },
+    "19": {
+      "coverage": 1.0,
+      "mapped": 3506,
+      "missing": 0,
+      "total": 3506
+    },
+    "2": {
+      "coverage": 0.9966989436619719,
+      "mapped": 4529,
+      "missing": 15,
+      "total": 4544
+    },
+    "20": {
+      "coverage": 0.9990678163598229,
+      "mapped": 4287,
+      "missing": 4,
+      "total": 4291
+    },
+    "21": {
+      "coverage": 0.9991518235793045,
+      "mapped": 3534,
+      "missing": 3,
+      "total": 3537
+    },
+    "22": {
+      "coverage": 0.997285374957584,
+      "mapped": 5878,
+      "missing": 16,
+      "total": 5894
+    },
+    "23": {
+      "coverage": 0.9920768307322929,
+      "mapped": 4132,
+      "missing": 33,
+      "total": 4165
+    },
+    "24": {
+      "coverage": 0.9973867595818815,
+      "mapped": 4580,
+      "missing": 12,
+      "total": 4592
+    },
+    "25": {
+      "coverage": 0.9969749351771824,
+      "mapped": 2307,
+      "missing": 7,
+      "total": 2314
+    },
+    "26": {
+      "coverage": 0.998414585810543,
+      "mapped": 2519,
+      "missing": 4,
+      "total": 2523
+    },
+    "27": {
+      "coverage": 0.9889807162534435,
+      "mapped": 1077,
+      "missing": 12,
+      "total": 1089
+    },
+    "28": {
+      "coverage": 0.999395039322444,
+      "mapped": 1652,
+      "missing": 1,
+      "total": 1653
+    },
+    "29": {
+      "coverage": 0.9978947368421053,
+      "mapped": 4266,
+      "missing": 9,
+      "total": 4275
+    },
+    "3": {
+      "coverage": 1.0,
+      "mapped": 6621,
+      "missing": 0,
+      "total": 6621
+    },
+    "30": {
+      "coverage": 0.9967780910189287,
+      "mapped": 2475,
+      "missing": 8,
+      "total": 2483
+    },
+    "31": {
+      "coverage": 0.9854403409090909,
+      "mapped": 2775,
+      "missing": 41,
+      "total": 2816
+    },
+    "32": {
+      "coverage": 0.9973480662983425,
+      "mapped": 4513,
+      "missing": 12,
+      "total": 4525
+    },
+    "33": {
+      "coverage": 0.999047921294827,
+      "mapped": 3148,
+      "missing": 3,
+      "total": 3151
+    },
+    "34": {
+      "coverage": 0.9798873692679002,
+      "mapped": 2436,
+      "missing": 50,
+      "total": 2486
+    },
+    "35": {
+      "coverage": 0.9961866715089885,
+      "mapped": 5486,
+      "missing": 21,
+      "total": 5507
+    },
+    "36": {
+      "coverage": 0.981698732989207,
+      "mapped": 6276,
+      "missing": 117,
+      "total": 6393
+    },
+    "37": {
+      "coverage": 0.9812462189957653,
+      "mapped": 3244,
+      "missing": 62,
+      "total": 3306
+    },
+    "38": {
+      "coverage": 0.9941196817710135,
+      "mapped": 2874,
+      "missing": 17,
+      "total": 2891
+    },
+    "39": {
+      "coverage": 0.9844202898550725,
+      "mapped": 2717,
+      "missing": 43,
+      "total": 2760
+    },
+    "4": {
+      "coverage": 0.9992973827507465,
+      "mapped": 5689,
+      "missing": 4,
+      "total": 5693
+    },
+    "40": {
+      "coverage": 0.9948672171390315,
+      "mapped": 4458,
+      "missing": 23,
+      "total": 4481
+    },
+    "41": {
+      "coverage": 0.9943841257955822,
+      "mapped": 5312,
+      "missing": 30,
+      "total": 5342
+    },
+    "42": {
+      "coverage": 0.9978991596638656,
+      "mapped": 7125,
+      "missing": 15,
+      "total": 7140
+    },
+    "43": {
+      "coverage": 0.9715583646059649,
+      "mapped": 4919,
+      "missing": 144,
+      "total": 5063
+    },
+    "44": {
+      "coverage": 0.9953768844221106,
+      "mapped": 4952,
+      "missing": 23,
+      "total": 4975
+    },
+    "45": {
+      "coverage": 0.9928545909253305,
+      "mapped": 5558,
+      "missing": 40,
+      "total": 5598
+    },
+    "46": {
+      "coverage": 0.9980107985223075,
+      "mapped": 3512,
+      "missing": 7,
+      "total": 3519
+    },
+    "47": {
+      "coverage": 0.9968756102323765,
+      "mapped": 5105,
+      "missing": 16,
+      "total": 5121
+    },
+    "48": {
+      "coverage": 1.0,
+      "mapped": 2954,
+      "missing": 0,
+      "total": 2954
+    },
+    "49": {
+      "coverage": 0.9975550122249389,
+      "mapped": 2448,
+      "missing": 6,
+      "total": 2454
+    },
+    "5": {
+      "coverage": 0.9997060120535058,
+      "mapped": 6801,
+      "missing": 2,
+      "total": 6803
+    },
+    "6": {
+      "coverage": 1.0,
+      "mapped": 4328,
+      "missing": 0,
+      "total": 4328
+    },
+    "7": {
+      "coverage": 0.9963624338624338,
+      "mapped": 6026,
+      "missing": 22,
+      "total": 6048
+    },
+    "8": {
+      "coverage": 0.994166479694862,
+      "mapped": 4431,
+      "missing": 26,
+      "total": 4457
+    },
+    "9": {
+      "coverage": 0.9989991993594876,
+      "mapped": 4991,
+      "missing": 5,
+      "total": 4996
+    }
+  },
+  "frozen_elliptic": {
+    "classes_sha256": "93e2e7b2405c735ba752bf6ba06b947561deddd1f5a8fc91e46f6a4c0e439493",
+    "features_sha256": "fd7f83573443c9e302e371d3f110e3b6224160f5d1ed8a287757936127800ff0",
+    "timestep_count": 49,
+    "timestep_support": [
+      1,
+      49
+    ],
+    "transaction_count": 203769
+  },
+  "mapping_integrity": {
+    "coverage": 0.995264245297371,
+    "duplicate_transaction_hashes": 0,
+    "duplicate_txids": 0,
+    "elliptic_external_txids": 0,
+    "elliptic_missing_txids": 965,
+    "invalid_transaction_hashes": 0,
+    "invalid_txids": 0,
+    "physical_rows": 202804,
+    "unexpected_column_rows": 0,
+    "unique_transaction_hashes": 202804,
+    "unique_txids": 202804
+  },
+  "mapping_source": {
+    "archive_sha256": "05bc9d176a1d25c871bda6ec176fbc61e67b866e76b6f102ff5ca6eb9b987803",
+    "commercial_use_approved": false,
+    "kaggle_last_updated": "2019-11-18T11:30:49.563Z",
+    "kaggle_ref": "alexbenzik/deanonymized-995-pct-of-elliptic-transactions",
+    "kaggle_version": 1,
+    "license_name": "Unknown",
+    "license_status": "unresolved",
+    "redistribution_approved": false,
+    "result_csv_rows": 202804,
+    "result_csv_sha256": "7ba5831196c108590b88a4ac488bfc6a7753890f9ea1b2e28c1d2fdff6b27dc8"
+  },
+  "phase": "F1.2B.2_mapping_coverage_feasibility",
+  "predictive_modeling": false,
+  "raw_mapping_embedded_in_audit_record": false,
+  "scientific_status": "non_result_producing",
+  "study": "MIZAN-GATE 0.1B"
+}
