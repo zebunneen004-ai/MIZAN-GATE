@@ -1,0 +1,204 @@
+{
+    "schema_version":  1,
+    "program":  "MIZAN-GATE",
+    "study":  "0.1B",
+    "gate":  "F1.3C.1",
+    "record_date":  "2026-08-08",
+    "record_type":  "prospective cohort attrition temporal and entity independence contract",
+    "repository":  {
+                       "branch":  "research/0.1b-feasibility",
+                       "parent_commit":  "47d64d4dde34db68812ca74d68b94be796a6577b",
+                       "main_closed_0_1a_commit":  "10e647d196d0f8c5794883cad8e7884658f2deb0"
+                   },
+    "inherited_feature_contract":  {
+                                       "dossier_sha256":  "0e232f24a048c92f4a160809f321a7eb9e37352f0a1cbe07c247384ae7437f56",
+                                       "manifest_sha256":  "12e537d14a934c0c6bf16783181d806d6e52de95c646f3c65f0039d644b81a47",
+                                       "T_b":  1,
+                                       "C":  18,
+                                       "A_h":  72,
+                                       "G_h":  60,
+                                       "L":  165
+                                   },
+    "target_outcome":  {
+                           "eligible_labels":  [
+                                                   "licit",
+                                                   "illicit"
+                                               ],
+                           "unknown_targets_predictively_eligible":  false,
+                           "unknown_transactions_may_be_label_free_context":  true
+                       },
+    "mapping_eligibility":  {
+                                "exact_mapping_required":  true,
+                                "target_block_height_required":  true,
+                                "guessed_mapping_allowed":  false,
+                                "mapping_absence_zero_filled":  false,
+                                "known_unresolved_elliptic_count_before_this_gate":  965
+                            },
+    "primary_common_cohort":  {
+                                  "horizons":  [
+                                                   "H0",
+                                                   "H+1",
+                                                   "H+6",
+                                                   "H+144",
+                                                   "R575059"
+                                               ],
+                                  "same_target_membership_across_horizons":  true,
+                                  "per_horizon_complete_case_substitution":  false,
+                                  "requires_T_b":  true,
+                                  "requires_C":  true,
+                                  "requires_A_h":  true,
+                                  "requires_G_h":  true,
+                                  "reconstruction_failure_is_structural_zero":  false
+                              },
+    "secondary_h_2016":  {
+                             "role":  "pre-specified secondary sensitivity",
+                             "membership":  "primary common cohort intersect valid H+2016 reconstruction",
+                             "may_reduce_primary_cohort":  false,
+                             "paired_H0_and_R_rerun_on_secondary_subset":  true
+                         },
+    "historical_L":  {
+                         "primary_comparison_uses_same_target_membership":  true,
+                         "larger_L_only_sample_primary":  false
+                     },
+    "chronological_partitions":  {
+                                     "basis":  "original Elliptic timestep",
+                                     "development":  [
+                                                         1,
+                                                         2,
+                                                         3,
+                                                         4,
+                                                         5,
+                                                         6,
+                                                         7,
+                                                         8,
+                                                         9,
+                                                         10,
+                                                         11,
+                                                         12,
+                                                         13,
+                                                         14,
+                                                         15,
+                                                         16,
+                                                         17,
+                                                         18,
+                                                         19,
+                                                         20,
+                                                         21,
+                                                         22,
+                                                         23,
+                                                         24,
+                                                         25,
+                                                         26,
+                                                         27,
+                                                         28,
+                                                         29,
+                                                         30
+                                                     ],
+                                     "calibration":  [
+                                                         31,
+                                                         32,
+                                                         33,
+                                                         34,
+                                                         35
+                                                     ],
+                                     "operating":  [
+                                                       36,
+                                                       37,
+                                                       38,
+                                                       39,
+                                                       40
+                                                   ],
+                                     "historical_evaluation":  [
+                                                                   41,
+                                                                   42,
+                                                                   43,
+                                                                   44,
+                                                                   45,
+                                                                   46,
+                                                                   47,
+                                                                   48,
+                                                                   49
+                                                               ],
+                                     "random_primary_repartition_allowed":  false,
+                                     "historical_evaluation_claimed_untouched":  false
+                                 },
+    "temporal_independence":  {
+                                  "primary_max_additional_blocks":  144,
+                                  "primary_boundary_rule":  "earlier_target_block + 144 \u003c minimum next-partition target block",
+                                  "violation_resolution":  "remove violating earlier targets in descending target-block-height order",
+                                  "violation_resolution_uses_labels":  false,
+                                  "h_2016_boundary_rule":  "earlier_target_block + 2016 \u003c minimum next-partition target block",
+                                  "h_2016_may_have_secondary_training_subset":  true,
+                                  "R575059_is_prospective":  false,
+                                  "R575059_temporal_embargo_required":  false
+                              },
+    "entity_independence":  {
+                                "primary_mode":  "strict chronological inductive",
+                                "address_footprint":  "unique valid input and output Bitcoin addresses directly present on target transaction",
+                                "transaction_footprint":  "target transaction hash plus immediate predecessor and successor transaction hashes eligible at R575059",
+                                "footprint_horizon":  575059,
+                                "later_target_address_overlap_with_prior_retained_allowed":  false,
+                                "later_target_transaction_footprint_overlap_with_prior_retained_allowed":  false,
+                                "conflict_resolution":  "exclude later target; chronology wins",
+                                "conflict_resolution_uses_label":  false,
+                                "within_partition_overlap_auto_excluded":  false,
+                                "nonpurged_chronological_analysis_role":  "pre-specified sensitivity"
+                            },
+    "attrition_reason_precedence":  [
+                                        "outcome_unknown",
+                                        "mapping_unavailable",
+                                        "mapping_malformed_or_nonunique",
+                                        "target_block_height_unresolved",
+                                        "target_transaction_reconstruction_failure",
+                                        "C_invalid",
+                                        "primary_A_h_invalid",
+                                        "primary_G_h_invalid",
+                                        "historical_L_invalid",
+                                        "primary_temporal_boundary_purge",
+                                        "cross_partition_direct_address_overlap",
+                                        "cross_partition_one_hop_transaction_overlap"
+                                    ],
+    "retention_thresholds":  {
+                                 "denominator":  "mapped labeled targets",
+                                 "minimum_overall":  0.9,
+                                 "minimum_illicit":  0.9,
+                                 "minimum_licit":  0.9,
+                                 "maximum_absolute_class_retention_gap":  0.05,
+                                 "threshold_failure_allows_predictive_modeling":  false,
+                                 "thresholds_claimed_universal":  false
+                             },
+    "class_support":  {
+                          "every_required_final_partition_must_have_licit":  true,
+                          "every_required_final_partition_must_have_illicit":  true,
+                          "exact_precision_requirement_deferred_to":  "F1.3D"
+                      },
+    "f1_3c_2_required_reporting":  [
+                                       "starting Elliptic count",
+                                       "known-label count",
+                                       "mapped known-label count",
+                                       "primary common reconstruction count",
+                                       "overall retention",
+                                       "class-specific retention",
+                                       "timestep retention",
+                                       "partition retention",
+                                       "mutually exclusive exclusion reasons",
+                                       "primary temporal purge",
+                                       "direct-address overlap exclusions",
+                                       "one-hop transaction overlap exclusions",
+                                       "strict-inductive partition counts",
+                                       "final class support",
+                                       "H+2016 secondary attrition"
+                                   ],
+    "predictive_firewall":  {
+                                "cohort_counts_computed_here":  false,
+                                "study_feature_values_computed":  false,
+                                "predictive_modeling_started":  false,
+                                "predictive_metrics_computed":  false,
+                                "graph_utility_computed":  false,
+                                "breakthrough_established":  false
+                            },
+    "formal_freeze":  {
+                          "current_status":  "PENDING_REVIEW_COMMIT_PUSH_CI",
+                          "next_after_formal_freeze":  "F1.3C.2 no-results cohort attrition and independence feasibility audit"
+                      }
+}
