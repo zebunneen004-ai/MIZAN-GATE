@@ -1,0 +1,160 @@
+{
+    "schema_version":  1,
+    "program":  "MIZAN-GATE",
+    "study":  "0.1B",
+    "record":  "F1.3A observation-horizon and retrospective-comparator design",
+    "record_date":  "2026-08-08",
+    "record_type":  "prospective no-results scientific design",
+    "repository":  {
+                       "branch":  "research/0.1b-feasibility",
+                       "parent_commit":  "5082312b556de096c6fd58683a28f68da079fa0b",
+                       "main_closed_0_1a_commit":  "10e647d196d0f8c5794883cad8e7884658f2deb0"
+                   },
+    "formal_freeze":  {
+                          "intended_status":  "FROZEN",
+                          "current_preseal_status":  "PENDING_FORMAL_REPOSITORY_SEAL",
+                          "seal_requires":  [
+                                                "commit exact artifacts",
+                                                "push exact commit to research branch",
+                                                "verify remote SHA",
+                                                "successful CI for exact seal SHA"
+                                            ]
+                      },
+    "predictive_firewall":  {
+                                "predictive_modeling_started":  false,
+                                "predictive_metrics_inspected":  false,
+                                "horizons_selected_using_predictive_results":  false,
+                                "breakthrough_established":  false
+                            },
+    "inherited_h0":  {
+                         "status":  "FROZEN_PREVIOUSLY",
+                         "definition":  "end of target confirmation block",
+                         "target_block_symbol":  "b_i",
+                         "cutoff_rule":  "observation_block_height \u003c= b_i",
+                         "same_block_evidence":  "eligible",
+                         "within_block_order_required":  false,
+                         "interpretation":  "post-confirmation block-end risk assessment"
+                     },
+    "horizon_unit":  {
+                         "type":  "additional Bitcoin blocks after H0",
+                         "membership_basis":  "block height",
+                         "inclusive_upper_bound":  true,
+                         "wall_clock_membership":  false,
+                         "confirmation_count_semantics":  false
+                     },
+    "core_frontier":  [
+                          {
+                              "id":  "H0",
+                              "additional_blocks":  0,
+                              "cutoff":  "b_i",
+                              "role":  "decision-time baseline"
+                          },
+                          {
+                              "id":  "H1",
+                              "additional_blocks":  1,
+                              "cutoff":  "b_i + 1",
+                              "role":  "immediate next-block evidence"
+                          },
+                          {
+                              "id":  "H6",
+                              "additional_blocks":  6,
+                              "cutoff":  "b_i + 6",
+                              "role":  "short delayed-assessment horizon",
+                              "target_time_interpretation":  "approximately one hour",
+                              "literal_wall_clock_claim":  false,
+                              "six_confirmations_claim":  false
+                          },
+                          {
+                              "id":  "H144",
+                              "additional_blocks":  144,
+                              "cutoff":  "b_i + 144",
+                              "role":  "delayed-assessment horizon",
+                              "target_time_interpretation":  "approximately one day",
+                              "literal_wall_clock_claim":  false
+                          }
+                      ],
+    "secondary_sensitivity":  {
+                                  "id":  "H2016",
+                                  "additional_blocks":  2016,
+                                  "cutoff":  "b_i + 2016",
+                                  "role":  "pre-specified long-horizon sensitivity",
+                                  "target_time_interpretation":  "approximately two weeks",
+                                  "literal_wall_clock_claim":  false,
+                                  "primary_retrospective_contrast_member":  false
+                              },
+    "retrospective_comparator":  {
+                                     "id":  "R575059",
+                                     "type":  "absolute Bitcoin block",
+                                     "block_height":  575059,
+                                     "eligibility_rule":  "observation_block_height \u003c= 575059",
+                                     "name":  "benchmark-construction-aligned retrospective comparator",
+                                     "current_tip_based":  false,
+                                     "infrastructure_tip_based":  false,
+                                     "exact_legacy_replication_claim":  false
+                                 },
+    "horizon_roles":  {
+                          "primary_horizon_contrast":  "H0 versus R575059",
+                          "intermediate_frontier":  [
+                                                        "H1",
+                                                        "H6",
+                                                        "H144"
+                                                    ],
+                          "long_horizon_sensitivity":  "H2016",
+                          "monotonicity_assumed":  false
+                      },
+    "source_rationale":  {
+                             "elliptic_original":  {
+                                                       "citation":  "Weber et al. 2019, arXiv:1908.02591",
+                                                       "locked_fact":  "49 time steps spaced approximately two weeks apart"
+                                                   },
+                             "elliptic_2026_audit":  {
+                                                         "citation":  "Safar et al. 2026, DOI 10.1016/j.fsidi.2026.302124",
+                                                         "address_feature_reference_block":  575059,
+                                                         "construction_time_neighbor_information":  true,
+                                                         "fixed_relative_delay_examples":  [
+                                                                                               "approximately one hour",
+                                                                                               "approximately one day"
+                                                                                           ]
+                                                     },
+                             "bitcoin_core":  {
+                                                  "release":  "v31.1",
+                                                  "commit":  "9be056a8a72b624dae9623b2f7bded92c2a21c91",
+                                                  "tree":  "109dc8b3413dae47f00add3e30e50cde454c6f8c",
+                                                  "chainparams_sha256":  "5b05344137dd89a8095e82e58403142de63fbbf824733e398ec35e3ac590c884",
+                                                  "target_spacing_seconds":  600,
+                                                  "target_timespan_seconds":  1209600
+                                              },
+                             "sealed_f1_1_prior_audit_git_blob":  "99c7c535524c609903d1c94f8bfbebf2370314fd"
+                         },
+    "infrastructure_consequence":  {
+                                       "prior_baseline_ceiling":  487975,
+                                       "new_absolute_r_ceiling":  575059,
+                                       "r_above_prior_baseline":  true,
+                                       "capacity_update_required_before_provisioning":  true,
+                                       "prior_1tb_baseline_revalidated_for_r":  false,
+                                       "scientific_horizon_selected_by_storage":  false
+                                   },
+    "unresolved":  [
+                       "exact mapped-subset block-height envelope",
+                       "safe transaction-intrinsic core C",
+                       "point-in-time address-history features A_h",
+                       "label-free graph features G_h",
+                       "graph hop depth",
+                       "common eligible cohort",
+                       "attrition thresholds",
+                       "temporal/entity-disjoint split implementation",
+                       "preprocessing specification",
+                       "model family",
+                       "hyperparameter protocol",
+                       "primary predictive metric",
+                       "practical materiality margin",
+                       "uncertainty procedure",
+                       "multiplicity treatment",
+                       "alert-budget reporting",
+                       "measured infrastructure usage",
+                       "final minimum VM",
+                       "runtime reconstruction coverage"
+                   ],
+    "next_required_no_results_gate":  "update infrastructure/capacity planning for absolute retrospective block 575059 before provisioning",
+    "subsequent_scientific_design_gate":  "F1.3B feature and admissibility contract for C, A_h, G_h, and legacy comparator L"
+}
