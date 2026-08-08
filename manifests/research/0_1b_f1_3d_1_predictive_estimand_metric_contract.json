@@ -1,0 +1,167 @@
+{
+    "schema_version":  1,
+    "program":  "MIZAN-GATE",
+    "study":  "0.1B",
+    "gate":  "F1.3D.1",
+    "record_date":  "2026-08-08",
+    "record_type":  "prospective predictive estimand metric uncertainty and multiplicity contract",
+    "repository":  {
+                       "branch":  "research/0.1b-feasibility",
+                       "parent_commit":  "009cad6881406e64f757bdb112e0425d49c9bf67",
+                       "main_closed_0_1a_commit":  "10e647d196d0f8c5794883cad8e7884658f2deb0"
+                   },
+    "inherited_contracts":  {
+                                "f1_3b_2_manifest_sha256":  "12e537d14a934c0c6bf16783181d806d6e52de95c646f3c65f0039d644b81a47",
+                                "f1_3c_1_dossier_sha256":  "741e538cbf809eef44a56706ffc93e0df92899606e0cd54c08a40a1c59547eff",
+                                "f1_3c_1_manifest_sha256":  "c0aa6677949094c4df1e105618f9db2e2273d7b12e84016f23e05c4d2e57dc12"
+                            },
+    "labels":  {
+                   "positive":  "illicit",
+                   "negative":  "licit",
+                   "unknown_predictive_outcome":  false
+               },
+    "feature_sets":  {
+                         "C":  "T_b + C",
+                         "baseline_h":  "T_b + C + A_h",
+                         "graph_h":  "T_b + C + A_h + G_h",
+                         "historical_L":  "T_b + L",
+                         "paired_same_targets_required":  true
+                     },
+    "horizons":  {
+                     "primary_frontier":  [
+                                              "H0",
+                                              "H+1",
+                                              "H+6",
+                                              "H+144",
+                                              "R575059"
+                                          ],
+                     "secondary":  "H+2016",
+                     "monotonicity_assumed":  false,
+                     "best_horizon_selection_permitted":  false
+                 },
+    "model":  {
+                  "family":  "XGBoost",
+                  "objective":  "binary:logistic",
+                  "n_estimators":  300,
+                  "max_depth":  8,
+                  "learning_rate":  0.15,
+                  "subsample":  0.85,
+                  "colsample_bytree":  0.85,
+                  "min_child_weight":  10,
+                  "gamma":  0,
+                  "reg_alpha":  1,
+                  "reg_lambda":  2,
+                  "tree_method":  "hist",
+                  "device":  "cpu",
+                  "n_jobs":  1,
+                  "seeds":  [
+                                11,
+                                23,
+                                42,
+                                71,
+                                101
+                            ],
+                  "aggregation":  "average seed-specific illicit probabilities before metrics",
+                  "post_result_hyperparameter_tuning":  false,
+                  "alternative_primary_model_selection":  false
+              },
+    "chronological_evaluation":  {
+                                     "train":  "timesteps 1-30 strict-inductive development",
+                                     "calibration_diagnostic":  "timesteps 31-35",
+                                     "primary_operating":  "timesteps 36-40",
+                                     "historical_replication":  "timesteps 41-49",
+                                     "refit_before_primary_predictions":  false,
+                                     "historical_claimed_untouched":  false
+                                 },
+    "primary_metric":  {
+                           "name":  "Average Precision",
+                           "implementation":  "sklearn.metrics.average_precision_score",
+                           "positive_label":  "illicit",
+                           "trapezoidal_pr_auc_substitution":  false
+                       },
+    "secondary_metrics":  [
+                              "ROC-AUC",
+                              "alert-budget recall",
+                              "alert-budget precision",
+                              "alert-budget lift"
+                          ],
+    "estimands":  {
+                      "delta_g":  "AP(T_b+C+A_h+G_h) - AP(T_b+C+A_h)",
+                      "delta_a":  "AP(T_b+C+A_h) - AP(T_b+C)",
+                      "primary_A_G":  "Delta_G(R575059) - Delta_G(H0)",
+                      "primary_window":  "operating timesteps 36-40 strict-inductive common cohort",
+                      "historical_replication":  "same A_G formula on timesteps 41-49",
+                      "no_monotonicity":  true
+                  },
+    "materiality":  {
+                        "absolute_AP_threshold":  0.01,
+                        "threshold_claimed_universal":  false
+                    },
+    "alert_budgets":  {
+                          "fractions":  [
+                                            0.005,
+                                            0.01,
+                                            0.02,
+                                            0.05
+                                        ],
+                          "count_rule":  "max(1, ceiling(fraction * n))",
+                          "primary_sort":  "predicted illicit probability descending",
+                          "tie_break":  "Elliptic txId ascending",
+                          "role":  "secondary operational summaries"
+                      },
+    "uncertainty":  {
+                        "primary":  "paired entity-component bootstrap",
+                        "component_edge":  "shared direct-address footprint OR shared one-hop transaction footprint",
+                        "replicates":  5000,
+                        "seed":  301,
+                        "interval":  "95% percentile",
+                        "bootstrap_mean_is_point_estimate":  false,
+                        "minimum_components_for_inference":  20,
+                        "minimum_illicit_components_for_inference":  2,
+                        "invalid_single_class_replicates":  "discard and redraw",
+                        "temporal_sensitivity":  {
+                                                     "method":  "paired timestep block bootstrap",
+                                                     "replicates":  5000,
+                                                     "seed":  302
+                                                 }
+                    },
+    "multiplicity":  {
+                         "confirmatory_estimand_count":  1,
+                         "confirmatory_estimand":  "A_G operating timesteps 36-40",
+                         "primary_multiplicity_adjustment":  "none required for single confirmatory estimand",
+                         "secondary_outputs_confirmatory":  false,
+                         "posthoc_significance_search_permitted":  false
+                     },
+    "result_hierarchy":  [
+                             "feasibility and cohort validity",
+                             "A_G operating estimate and uncertainty",
+                             "A_G practical materiality",
+                             "Delta_G(H0)",
+                             "full availability frontier",
+                             "historical replication",
+                             "Delta_A mechanism",
+                             "alert-budget summaries",
+                             "historical L comparator"
+                         ],
+    "preprocessing":  {
+                          "whole_dataset_normalization":  false,
+                          "test_fitted_transformation":  false,
+                          "outcome_guided_feature_selection":  false,
+                          "reconstruction_failure_imputation":  false
+                      },
+    "predictive_firewall":  {
+                                "cohort_attrition_measured":  false,
+                                "study_feature_values_computed":  false,
+                                "models_fit":  false,
+                                "AP_computed":  false,
+                                "ROC_AUC_computed":  false,
+                                "bootstrap_computed":  false,
+                                "alert_budget_computed":  false,
+                                "graph_utility_computed":  false,
+                                "breakthrough_established":  false
+                            },
+    "formal_freeze":  {
+                          "current_status":  "PENDING_REVIEW_COMMIT_PUSH_CI",
+                          "next_after_full_preregistration":  "isolated reconstruction infrastructure provisioning and runtime certification"
+                      }
+}
