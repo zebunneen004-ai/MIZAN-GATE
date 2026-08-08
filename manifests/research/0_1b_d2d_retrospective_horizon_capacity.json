@@ -1,0 +1,110 @@
+{
+    "schema_version":  1,
+    "program":  "MIZAN-GATE",
+    "study":  "0.1B",
+    "record":  "D2D retrospective-horizon capacity consequence",
+    "record_date":  "2026-08-08",
+    "record_type":  "no-results engineering capacity update",
+    "repository":  {
+                       "branch":  "research/0.1b-feasibility",
+                       "parent_commit":  "6037749261074465f7ce560fe09d600cbdbac49b",
+                       "main_closed_0_1a_commit":  "10e647d196d0f8c5794883cad8e7884658f2deb0"
+                   },
+    "inherited_scientific_design":  {
+                                        "f1_3a_status":  "FORMALLY_FROZEN_PASS",
+                                        "f1_3a_commit":  "6037749261074465f7ce560fe09d600cbdbac49b",
+                                        "prior_ceiling":  487975,
+                                        "retrospective_ceiling":  575059,
+                                        "horizons_modified":  false
+                                    },
+    "range":  {
+                  "prior_ceiling":  487975,
+                  "new_ceiling":  575059,
+                  "additional_blocks":  87084,
+                  "h2016_from_source_declared_max":  489991,
+                  "r_is_controlling_ceiling":  true
+              },
+    "serialized_block_sensitivity":  {
+                                         "source":  "Bitcoin Core v31.1 consensus.h",
+                                         "source_commit":  "9be056a8a72b624dae9623b2f7bded92c2a21c91",
+                                         "source_tree":  "109dc8b3413dae47f00add3e30e50cde454c6f8c",
+                                         "source_sha256":  "c1cacb249d3a21ac482335f7ad7dff07f4f3c1fd47efa7f07249715db00b5ca8",
+                                         "max_serialized_block_bytes":  4000000,
+                                         "classification":  "conservative engineering sensitivity",
+                                         "actual_historical_average_claim":  false,
+                                         "measured_growth_claim":  false,
+                                         "added_range_maximum_raw_bytes":  348336000000,
+                                         "added_range_maximum_raw_gb_decimal":  348.336
+                                     },
+    "inherited_capacity_model":  {
+                                     "historical_raw_chain_gb":  130,
+                                     "core_txindex_gb":  20,
+                                     "core_state_metadata_gb":  10,
+                                     "blockbook_rocksdb_gb":  180,
+                                     "postgres_and_artifacts_gb":  50,
+                                     "temporary_workspace_gb":  50,
+                                     "component_total_gb":  440,
+                                     "safety_headroom_percent":  25,
+                                     "planning_envelope_gb":  550
+                                 },
+    "updated_capacity_model":  {
+                                   "raw_chain_sensitivity_gb":  478.336,
+                                   "component_total_gb":  788.336,
+                                   "safety_headroom_percent":  25,
+                                   "safety_headroom_gb":  197.084,
+                                   "planning_envelope_gb":  985.42,
+                                   "classification":  "conservative planning sensitivity; not measured usage"
+                               },
+    "nominal_1tb":  {
+                        "capacity_gb_decimal":  1000,
+                        "residual_above_envelope_gb":  14.58,
+                        "residual_percent":  1.458,
+                        "arithmetic_envelope_cleared":  true,
+                        "recommended_working_baseline":  false,
+                        "reason":  "insufficient practical residual margin under conservative planning sensitivity"
+                    },
+    "nominal_2tb":  {
+                        "capacity_gb_decimal":  2000,
+                        "residual_above_envelope_gb":  1014.58,
+                        "arithmetic_envelope_cleared":  true,
+                        "recommended_working_baseline":  true
+                    },
+    "working_provisioning":  {
+                                 "ram_gb":  32,
+                                 "vcpu":  8,
+                                 "disk_gb_decimal":  2000,
+                                 "disk_type":  "fast SSD",
+                                 "host":  "dedicated x86_64 / AMD64 Linux",
+                                 "classification":  "provisional working baseline; not final minimum"
+                             },
+    "high_headroom":  {
+                          "ram_gb":  64,
+                          "vcpu":  16,
+                          "disk_gb_decimal":  2000,
+                          "disk_type":  "fast SSD",
+                          "classification":  "high-compute-headroom option; not final minimum"
+                      },
+    "runtime_measurements_required":  [
+                                          "actual historical raw block storage through 575059",
+                                          "Bitcoin Core txindex usage",
+                                          "Bitcoin Core chainstate and metadata",
+                                          "Blockbook RocksDB usage",
+                                          "PostgreSQL and reconstruction artifacts",
+                                          "temporary synchronization peak",
+                                          "filesystem and operating-system overhead",
+                                          "runtime"
+                                      ],
+    "scientific_firewall":  {
+                                "horizon_design_changed":  false,
+                                "r_changed":  false,
+                                "predictive_results_used":  false,
+                                "infrastructure_determined_science":  false
+                            },
+    "predictive_firewall":  {
+                                "predictive_modeling_started":  false,
+                                "predictive_metrics_computed":  false,
+                                "graph_utility_computed":  false,
+                                "breakthrough_established":  false
+                            },
+    "next_phase":  "formally seal D2D, then continue prospective F1.3B feature/admissibility design before provisioning and predictive modeling"
+}
